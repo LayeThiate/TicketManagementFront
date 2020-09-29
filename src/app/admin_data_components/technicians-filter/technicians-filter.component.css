@@ -1,0 +1,21 @@
+/* Styles for the buttons */
+.mat-button{
+	background-color: #3b73b9;
+	color: white;
+	font-size: 12px;
+	box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+	margin-top: 18px;
+}
+
+.mat-form-field{
+	padding-left: 1vw;
+	padding-right: 1vw;
+}
+
+mat-expansion-panel-header{
+	background-color: #3b73b9 !important;
+}
+
+mat-panel-title{
+	color: white;
+}

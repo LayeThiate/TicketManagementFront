@@ -1,0 +1,15 @@
+/* Styles for the card */
+.custom-mat-card.mat-card{
+	margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+	padding: 24px; /*padding overriding is finally working yay*/
+}
+
+/* Styles for the toolbar */
+.mat-toolbar.mat-primary.content-toolbar {
+  background:white;
+  color: #1f1f14;
+  font-size: 20px;
+  font-family:  Roboto, "Helvetica Neue", sans-serif;
+}

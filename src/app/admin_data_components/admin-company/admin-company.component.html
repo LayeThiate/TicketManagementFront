@@ -1,0 +1,76 @@
+<mat-toolbar class="content-toolbar" color="primary">
+  <h2>Entreprises</h2>
+  <span class="fill-space"></span>
+
+  <button class="createTicketBtn" mat-button routerLink="/new-company"><mat-icon>add</mat-icon>Ajouter une entreprise</button>
+</mat-toolbar>
+
+<mat-card class="custom-mat-card">
+	<app-companies-filter></app-companies-filter>
+  	<div>
+		<table mat-table [dataSource]="dataSource">
+
+			<!--- Note that these columns can be defined in any order.
+					The actual rendered columns are set as a property on the row definition" -->
+
+			<!-- Position Column -->
+			<ng-container matColumnDef="select" style="width:25%">
+				<th mat-header-cell *matHeaderCellDef>
+					<mat-checkbox
+						(change)="$event ? masterToggle() : null"
+						[checked]="selection.hasValue() && isAllSelected()"
+						[indeterminate]="selection.hasValue() && !isAllSelected()">
+					</mat-checkbox>
+				</th>
+				<td mat-cell *matCellDef="let row"> 
+					<mat-checkbox *ngIf="!hasStatusClosed(row)"
+						(click)="$event.stopPropagation()"
+						(change)="$event ? selection.toggle(row) : null"
+						[checked]="selection.isSelected(row)">
+					</mat-checkbox>
+				</td>
+			</ng-container>
+
+			<!-- Edit button Column -->
+			<ng-container matColumnDef="edits">
+				<th mat-header-cell *matHeaderCellDef></th>
+				<td mat-cell *matCellDef="let element">
+					<button mat-icon-button [routerLink] = "['/new-company', element.id]">
+						<mat-icon>edit</mat-icon>
+					</button>
+				</td>
+			</ng-container>
+					
+			<!-- Nom Column -->
+			<ng-container matColumnDef="nom">
+				<th mat-header-cell *matHeaderCellDef> Nom </th>
+				<td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+			</ng-container>
+
+			<!-- City Column -->
+			<ng-container matColumnDef="city">
+				<th mat-header-cell *matHeaderCellDef> Ville </th>
+				<td mat-cell *matCellDef="let element"> {{element.city}} </td>
+			</ng-container>
+			
+			<!-- Number of client Column -->
+			<ng-container matColumnDef="nbClients">
+				<th mat-header-cell *matHeaderCellDef> Nombre de demandeurs </th>
+				<td mat-cell *matCellDef="let element"> {{element.nbClients}} </td>
+			</ng-container>
+
+			<!-- Delete button Column -->
+			<ng-container matColumnDef="delete">
+				<th mat-header-cell *matHeaderCellDef></th>
+				<td mat-cell *matCellDef="let element">
+					<button mat-icon-button (click)="deleteCompany(element.id)">
+						<mat-icon>delete</mat-icon>
+					</button>
+				</td>
+			</ng-container>
+			
+			<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+			<tr mat-row *matRowDef="let row; columns: displayedColumns;let element" (click)="router.navigate(['/new-company', element.id]);"></tr>
+		</table>
+	</div>
+</mat-card>

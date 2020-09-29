@@ -1,0 +1,42 @@
+/* Styles for the card */
+.custom-mat-card.mat-card{
+    margin-top: 10px;
+	padding: 9px;/*default is 16px*/ 
+}
+
+/* Styles for the toolbar */
+.mat-toolbar.mat-primary.content-toolbar {
+  background-color: #ff7024;
+  color: white;
+  font-size: 20px;
+  font-family:  Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Styles for the buttons */
+.mat-button{
+	background-color: #3b73b9;
+	color: white;
+	font-size: 12px;
+	box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+	margin-top: 18px;
+}
+
+.details{
+    padding-bottom: 10px;
+}
+
+.section{
+    margin-top: 10 px;
+    margin-bottom: 10 px;
+}
+
+.content{
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 0px;
+    display:inline-block;
+}
+
+.login{
+    display:block;
+}

@@ -1,0 +1,27 @@
+/* Styles for the side navigation bar */
+mat-sidenav {
+    width: /*250*/180px;
+}
+ 
+main {
+    padding: 10px;
+}
+
+.custom-nav.mat-drawer-side {
+	border-right-color: #3b73b9;
+	border-right-width: 2px;
+	border-right-style: solid;
+}
+
+main{
+	background-color: /*#6f9bd1*/#5996e3 !important;
+}
+
+.mat-drawer-transition .mat-drawer-content {
+	background-color: #5996e3 !important;
+}
+
+.mat-drawer-content {
+	background-color: #5996e3 !important;
+}
+

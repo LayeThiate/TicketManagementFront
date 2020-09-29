@@ -1,0 +1,29 @@
+<mat-accordion>
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Filtre
+      </mat-panel-title>
+      <mat-panel-description>
+	  Cliquez pour filtrer
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+	
+	<mat-form-field>
+      <input matInput placeholder="Nom">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Login">
+    </mat-form-field>
+	<mat-form-field>
+      <input matInput placeholder="Email">
+    </mat-form-field>
+	<mat-form-field>
+      <input matInput placeholder="Entreprise">
+    </mat-form-field>
+	
+	<button mat-button (click)="getUsers()">Filtrer</button>
+
+  </mat-expansion-panel>
+</mat-accordion>

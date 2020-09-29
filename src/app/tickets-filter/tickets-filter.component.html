@@ -1,0 +1,101 @@
+<mat-accordion>
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Filtre
+      </mat-panel-title>
+      <mat-panel-description>
+	  Cliquez pour filtrer
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+	
+	<mat-form-field>
+      <input matInput placeholder="Id">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Entreprise/Utilisateur">
+    </mat-form-field>
+	<mat-form-field>
+      <input matInput placeholder="Technicien">
+    </mat-form-field>
+	<mat-form-field>
+	  <input (input)="filter.start=$event.target.value" matInput [matDatepicker]="pickerBegin" placeholder="Date de début">
+	  <mat-datepicker-toggle matSuffix [for]="pickerBegin"></mat-datepicker-toggle>
+	  <mat-datepicker #pickerBegin></mat-datepicker>
+	</mat-form-field>
+	<mat-form-field>
+	  <input (input)="filter.end=$event.target.value" matInput [matDatepicker]="pickerEnd" placeholder="Date de fin">
+	  <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+	  <mat-datepicker #pickerEnd></mat-datepicker>
+	</mat-form-field>
+	<mat-form-field >
+	  <!--<mat-label>Catégorie</mat-label>
+	   <mat-select>
+	  	<mat-option [value]="">
+		Toutes
+		</mat-option>
+		<mat-option *ngFor="let cate of categories" [value]="cate.value">
+		  {{cate.viewValue}}
+		</mat-option>
+	  </mat-select> -->
+	  <input type="text"
+           placeholder="Catégorie"
+           aria-label="Number"
+           matInput
+           [formControl]="myControl"
+           [matAutocomplete]="auto" (selectionChange)="changeCategory($event.value)">
+	  <mat-autocomplete #auto="matAutocomplete" >
+		<mat-option *ngFor="let option of filteredOptions | async" [value]="option" >
+		  {{option}}
+		</mat-option>
+	  </mat-autocomplete>
+	</mat-form-field>
+    <mat-form-field>
+	  <mat-label>Statut</mat-label>
+	  <mat-select (selectionChange)="changeStatus($event.value)">
+		<mat-option [value]="">
+		Tous
+		</mat-option>
+		<mat-option *ngFor="let stat of statuts" [value]="stat.value">
+		  {{stat.viewValue}}
+		</mat-option>
+	  </mat-select>
+	</mat-form-field>
+    <mat-form-field>
+	  <mat-label>Type</mat-label>
+	  <mat-select (selectionChange)="changeType($event.value)">
+		<mat-option [value]="">
+		Tous
+		</mat-option>
+		<mat-option *ngFor="let type of types" [value]="type.value">
+		  {{type.viewValue}}
+		</mat-option>
+	  </mat-select>
+	</mat-form-field>
+	<mat-form-field>
+	  <mat-label>Affectation</mat-label>
+	  <mat-select (selectionChange)="changeAffecte($event.value)">
+		<mat-option [value]="">
+		Toutes
+		</mat-option>
+		<mat-option *ngFor="let aff of affectations" [value]="aff.value">
+		  {{aff.viewValue}}
+		</mat-option>
+	  </mat-select>
+	</mat-form-field>
+	<mat-form-field>
+	  <mat-label>Priorité</mat-label>
+	  <mat-select (selectionChange)="changePriority($event.value)">
+		<mat-option [value]="">
+		Toutes
+		</mat-option>
+		<mat-option *ngFor="let prio of priorities" [value]="prio.value">
+		  {{prio.viewValue}}
+		</mat-option>
+	  </mat-select>
+	</mat-form-field>
+	<button mat-button (click)="submitNewRequest()">Filtrer</button>
+
+  </mat-expansion-panel>
+</mat-accordion>

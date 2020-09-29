@@ -1,0 +1,34 @@
+<mat-toolbar class="content-toolbar" color="primary">
+  <h2>Compte</h2>
+  <span class="fill-space"></span>
+</mat-toolbar>
+
+<mat-card class="custom-mat-card">
+  <div class="personal details">
+    <div class = "section" >
+      Prénom: <h5 class ="section content" id="operatorFirstName">{{user.firstName}}</h5>
+    </div>
+    <div class = "section" >
+      Nom: <h5 class ="section content" id="operatorLastName">{{user.lastName}}</h5>
+    </div>
+    <div class = "section" >
+      Email: <h5 class ="section content" id="operatorEmail">{{user.email}}</h5>
+    </div>
+    <div class = "section" >
+      Entreprise: <h5 class ="section content" id="operatorEmail">{{user.company}}</h5>
+    </div>
+  </div>
+  <div class="login details">
+    <div class='data'>
+      <div class = "section" >
+        Login: <h5 class ="section content" id="companyName">{{user.login}}</h5>
+      </div>
+      <div *ngIf="true" class = "section" >
+        Mot de passe: <h5 class ="section content" id="companyName">{{user.mdp}}</h5>
+      </div>
+    </div>
+    <div>
+      <button class="editLoginBtn" mat-button routerLink="/new-company"><mat-icon>edit</mat-icon>Modifier</button>
+    </div>
+  </div>
+</mat-card>

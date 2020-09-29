@@ -1,0 +1,67 @@
+mat-expansion-panel-header{
+    background-color: #3b73b9 !important;
+    height: 64px!important;
+}
+
+mat-panel-title{
+    color: white;
+}
+
+/* Styles for the card */
+.custom-mat-card.mat-card{
+    margin-top: 10px;
+	padding: 9px;/*default is 16px*/ 
+}
+
+/* Styles for the toolbar */
+.mat-toolbar.mat-primary.content-toolbar {
+  background-color: #ff7024;
+  color: white;
+  font-size: 20px;
+  font-family:  Roboto, "Helvetica Neue", sans-serif;
+}
+
+.form-component{
+    display: inline-block;
+    padding-top:10px;
+    padding-right: 15px;
+    width: 39vw;
+}
+
+
+.form-component p{
+    padding-top:0px;
+}
+
+.form-component .mat-form-field{
+    width: 100%;
+}
+
+::ng-deep .mat-form-field-wrapper{
+    width: 100%;
+}
+
+.buttons-list{
+    float: right;
+}
+
+.white-button{
+    background-color: #e8e7e6;
+    font-size: 12px;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    margin-top: 18px;
+    margin-right: 9px; /*a rajouter si ce bouton est a gauche d’un autre bouton, pour ne pas les coller*/
+}
+
+.blue-button{
+    background-color: #3b73b9;
+    color: white;
+    font-size: 12px;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    margin-top: 18px;
+}
+
+.flex-box-2 {
+  display:flex;
+  justify-content: flex-end;
+}

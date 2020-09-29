@@ -1,0 +1,92 @@
+<mat-toolbar class="content-toolbar" color="primary">
+	<h3 *ngIf="!this.modification">
+	  Nouvel Opérateur (INCOMPLETE BACKEND CALLS)
+	</h3>
+	<h3 *ngIf="this.modification">
+		Modifier Opérateur (INCOMPLETE BACKEND CALLS)
+	  </h3>
+</mat-toolbar>
+
+<mat-card class="custom-mat-card">
+	<div class = inside-content>
+	  <mat-accordion [multi]="true">
+		
+		<div class=form-component>
+		  <mat-form-field>
+			<input (input)="firstName=$event.target.value" id="first-name-input" matInput placeholder="Nom">
+		  </mat-form-field>
+		</div>
+		<div class=form-component>
+		  <mat-form-field>
+			<input (input)="lastName=$event.target.value" id="last-name-input" matInput placeholder="Prénom">
+		  </mat-form-field>
+		</div>
+		<div class=form-component>
+		  <mat-form-field>
+			<input (input)="birthDate=$event.target.value" id="dob-input" matInput placeholder="Date de naissance">
+		  </mat-form-field>
+		</div>
+		<div class=form-component>
+		  <mat-form-field>
+			<input (input)="email=$event.target.value" id="email-input" matInput placeholder="Email">
+		  </mat-form-field>
+		</div>
+		<div class=form-component>
+		  <mat-form-field>
+			<input (input)="telephone=$event.target.value" id="telephone-input" matInput placeholder="Téléphone">
+		  </mat-form-field>
+		</div>
+		<div class=form-component>
+		  <mat-form-field>
+			<input (input)="portable=$event.target.value" id="portable-input" matInput placeholder="Portable">
+		  </mat-form-field>
+		</div>
+		<div class=form-component style = "width:79vw">
+		  <mat-form-field>
+			<input (input)="adress=$event.target.value" id="adress-input" matInput placeholder="Adresse">
+		  </mat-form-field>
+		</div>
+		<div class=form-component>
+		  <mat-form-field>
+			<input (input)="hiringDate=$event.target.value" id="hiring-date-input" matInput placeholder="Date d'embauche">
+		  </mat-form-field>
+		</div>
+		<div class=form-component>
+		  <mat-form-field>
+			<input (input)="contractID=$event.target.value" id="contract-id-input" matInput placeholder="Id du contrat">
+		  </mat-form-field>
+		</div>
+
+		<mat-expansion-panel [expanded] = "true">
+		  <mat-expansion-panel-header>
+			<mat-panel-title>
+			  Identifiants
+			</mat-panel-title>
+		  </mat-expansion-panel-header>
+		  <div class=form-component>
+			<mat-form-field>
+			  <input (input)="userName=$event.target.value" type="text" id="user-name-input" matInput placeholder="Indentifiant" value={{getLogin()}}>
+			</mat-form-field>
+		  </div>
+		  <div class=form-component>
+			<mat-form-field>
+			  <input (input)="password=$event.target.value" type="text" id="pswd-input" matInput placeholder="Mot de passe" value={{getPswd()}}>
+			</mat-form-field>
+		  </div>
+		  <button mat-button (click)="generateLogins()" class=blue-button>
+			Générer
+		  </button>
+
+		</mat-expansion-panel>
+	  </mat-accordion>
+
+	  <div class="flex-box-2">
+		<button mat-button (click)="cancel()" class=white-button>
+		  Annuler
+		</button>
+		<button mat-button (click)="createOperator()" class=blue-button>
+		  Créer
+		</button>
+	  </div>
+	</div>
+</mat-card>

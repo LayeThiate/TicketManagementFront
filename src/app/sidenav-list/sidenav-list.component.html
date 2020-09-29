@@ -1,0 +1,31 @@
+<mat-nav-list>
+  <a mat-list-item routerLink="/my-tickets-list" routerLinkActive="selected" (click)="changingMenusBooleans()" href="/tickets-list" [style.background-color]="ticketsItemSelected == true ? '#d14e08' : 'white'" [style.color]="ticketsItemSelected == true ? 'white' : 'rgba(0,0,0,.87)'">
+      <span class="nav-caption">Tickets</span>
+  </a>
+  <div class="submenu" *ngIf="showSubmenu && ticketsItemSelected">
+    <a mat-list-item routerLink="/my-tickets-list" routerLinkActive="selected" class="subMenuTicket">Mes tickets</a>
+    <a mat-list-item routerLink="/tickets-list" routerLinkActive="selected" class="subMenuTicket">Tous les tickets</a>
+  </div>
+  <a mat-list-item routerLink="/my-requests-list" routerLinkActive="selected" (click)="ticketsItemSelected=false"href="/my-requests-list">
+      <span class="nav-caption">Agenda</span>   
+  </a>
+  <a mat-list-item routerLink="/technicians-list" routerLinkActive="selected" (click)="ticketsItemSelected=false" href="/technicians-list">
+      <span class="nav-caption">Techniciens</span>   
+  </a>
+  <a mat-list-item routerLink="/companies-list" routerLinkActive="selected" (click)="ticketsItemSelected=false" href="/companies-list" >
+      <span class="nav-caption">Entreprises</span>   
+  </a>
+  <a mat-list-item routerLink="/users-list" routerLinkActive="selected" (click)="ticketsItemSelected=false" href="/users-list">
+      <span class="nav-caption">Demandeurs</span>
+  </a>
+  <a mat-list-item routerLink="/statistics-list" routerLinkActive="selected" (click)="ticketsItemSelected=false" href="/statistics-list">
+      <span class="nav-caption">Statistiques</span>
+  </a>
+  <mat-list-item routerLinkActive="selected">
+	  <a routerLink="/technician-account"  (click)="ticketsItemSelected=false" href="/technician-account">
+		  <span class="navItemAccount">Drake Uhlah</span>
+	  </a>	  
+	  <button class="logOutButton" mat-button (click)="logOut()"><mat-icon>power_settings_new</mat-icon>
+	  </button>
+  </mat-list-item>
+</mat-nav-list>

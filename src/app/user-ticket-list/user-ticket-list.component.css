@@ -1,0 +1,54 @@
+/* Styles for the card */
+.custom-mat-card.mat-card{
+	margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+	padding: 24px; /*padding overriding is finally working yay*/
+}
+
+/* Styles for the toolbar */
+.mat-toolbar.mat-primary.content-toolbar {
+  background:white;
+  color: #1f1f14;
+  font-size: 20px;
+  font-family:  Roboto, "Helvetica Neue", sans-serif;
+}
+
+table{
+ width: 100%;
+}
+
+.closeSelectedTicketsBtn.mat-button{
+	background-color: #e8e7e6;
+	font-size: 12px;
+	box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+	margin-top: 18px;
+	margin-right: 9px;
+}
+
+.fill-space {
+  flex: 1 1 auto;
+}
+
+.createTicketBtn.mat-button{
+	background-color: #3b73b9;
+	color: white;
+	font-size: 12px;
+	box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+	margin-top: 18px;
+}
+
+/*Putting the indeterminate symbol background (minus symbol) in blue */
+::ng-deep .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #3b73b9 !important;
+}
+
+/*Putting the checked symbol background in blue */
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #3b73b9 !important;
+}
+
+.mat-row:hover {
+  background-color: #ff7024;
+  cursor: pointer;
+}

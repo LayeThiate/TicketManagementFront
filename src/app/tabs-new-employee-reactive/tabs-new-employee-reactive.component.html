@@ -1,0 +1,61 @@
+<mat-card class="custom-mat-card">
+			<mat-tab-group animationDuration="0ms">
+			  <mat-tab label="Personal information">
+				<div class="personal-information-form">
+					<mat-form-field>
+						<input matInput placeholder="First name">
+					</mat-form-field>
+					<mat-form-field>
+						<input matInput placeholder="Last name">
+					</mat-form-field>
+					<mat-form-field>
+						<input matInput placeholder="Email address">
+					</mat-form-field>
+					<mat-form-field>
+						<input matInput [matDatepicker]="pickerFirstEmployment" placeholder="First employment date">
+						<mat-datepicker-toggle matSuffix [for]="pickerFirstEmployment"></mat-datepicker-toggle>
+						<mat-datepicker #pickerFirstEmployment></mat-datepicker>
+					</mat-form-field>
+					<mat-form-field>
+						<input matInput [matDatepicker]="pickerFirsGEEmployment" placeholder="First GE employment date">
+						<mat-datepicker-toggle matSuffix [for]="pickerFirsGEEmployment"></mat-datepicker-toggle>
+						<mat-datepicker #pickerFirsGEEmployment></mat-datepicker>
+					</mat-form-field>
+				</div>
+			  </mat-tab>
+			  <mat-tab label="Employment background">
+					<form [formGroup]="backgroundForm">
+						<div formArrayName="employmentBackgroundArray">
+							<div *ngFor="let item of employmentBackground.controls; let backgroundIndex=index" [formGroupName]="backgroundIndex">
+								<div class="employment-background-form">
+									<mat-form-field>
+										<input matInput formControlName="companyName" placeholder="Company name">
+									</mat-form-field>
+									<mat-form-field>
+										<input matInput formControlName="positionTitle" placeholder="Position title">
+									</mat-form-field>
+								</div>
+								<div class="employment-background-form">
+									<mat-form-field>
+										<input matInput [matDatepicker]="emloymentBeginningDate" formControlName="emloymentBeginningDate" placeholder="From">
+										<mat-datepicker-toggle matSuffix [for]="emloymentBeginningDate"></mat-datepicker-toggle>
+										<mat-datepicker #emloymentBeginningDate></mat-datepicker>
+									</mat-form-field>
+									<mat-form-field>
+										<input matInput [matDatepicker]="emloymentEndingDate" formControlName="emloymentEndingDate" placeholder="To">
+										<mat-datepicker-toggle matSuffix [for]="emloymentEndingDate"></mat-datepicker-toggle>
+										<mat-datepicker #emloymentEndingDate></mat-datepicker>
+									</mat-form-field>
+									<div class="del-button-card"><button class="delete-button-background" mat-button (click)="deleteEmploymentBackground()"><mat-icon>remove</mat-icon>Remove</button>
+									</div>
+									<mat-divider></mat-divider>
+								</div> 
+								<!-- The div is inline-block displaying, so add after the div, if you want to add after the divider-->
+							</div> <!-- end of div *ngFor="let item of employmentBackground -->
+							<p><button class="add-button-background" mat-button (click)="addEmploymentBackground()"><mat-icon>add</mat-icon>Add background</button>
+							</p>
+						</div> <!-- end of div formArrayName="employmentBackgroundArray -->
+					</form>
+			  </mat-tab>
+			</mat-tab-group>
+		</mat-card>

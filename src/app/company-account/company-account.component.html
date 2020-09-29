@@ -1,0 +1,38 @@
+<mat-toolbar class="content-toolbar" color="primary">
+  <h2>Entreprise</h2>
+  <span class="fill-space"></span>
+</mat-toolbar>
+
+<mat-card class="custom-mat-card">
+  <div class="companys details">
+    <div class = "section" >
+      Nom d'entreprise: <h5 class ="section content" id="operatorFirstName">{{company.name}}</h5>
+    </div>
+    <div class = "section" >
+      Ville: <h5 class ="section content" id="operatorLastName">{{company.city}}</h5>
+    </div>
+    <div class = "section" >
+      PDG: <h5 class ="section content" id="operatorEmail">{{company.PDG}}</h5>
+    </div>
+    <div class = "section" >
+      Email du PDG: <h5 class ="section content" id="operatorDoB">{{company.emailPDG}}</h5>
+    </div>
+    <div class = "section" >
+      Priorité par défaut: <h5 class ="section content" id="operatorTel">{{company.defaultPrio}}</h5>
+    </div>
+    <div class = "section" >
+      ID: <h5 class ="section content" id="operatorMobile">{{company.id}}</h5>
+    </div>
+    <div class = "section" >
+      Adresse: <h5 class ="section content" id="operatorAdress">{{company.adress}}</h5>
+    </div>
+  </div>
+  <div class="demandeurs details">
+    <div class = "section" >
+      Nombre d'utilisateurs: <h5 class ="section content" id="operatorAdress">{{company.numberOfUser}}</h5>
+    </div>
+  </div>
+  <div>
+    <button class="editLoginBtn" mat-button [routerLink] = "['/new-company', company.id]"><mat-icon>edit</mat-icon>Modifier</button>
+  </div>
+</mat-card>

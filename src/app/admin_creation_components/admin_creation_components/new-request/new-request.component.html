@@ -1,0 +1,19 @@
+<mat-toolbar class="content-toolbar" color="primary">
+<h2>New request</h2>
+</mat-toolbar>
+<mat-card class="custom-mat-card">
+		<div class="personal-information-form">
+			<mat-form-field>
+				<select matNativeControl required placeholder="Request type">
+					<option value="blank"></option>
+					<option value="maternity-leave">Maternity leave</option>
+					<option value="parental-leave">Parental leave</option>
+					<option value="telework">Sickness leave</option>
+					<option value="sickness-leave">Telework</option>
+					<option value="mercedes">Vacation</option>
+				</select>
+			</mat-form-field>
+		</div>
+</mat-card>
+<p><button class="new-request-button" mat-button (click)="submitNewRequest()">Submit<mat-icon>send</mat-icon></button>
+</p>

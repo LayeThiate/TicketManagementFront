@@ -1,0 +1,32 @@
+<mat-card class="custom-mat-card">
+
+  <div class = "row">
+    <!--Written stats-->
+    <div class = "column">
+      <div class = "section" >
+        Nombre d'entreprises: <h5 class ="section content" id="adminFirstName">{{this.numberCompanies}}</h5>
+      </div>
+      <div class = "section" >
+        Nombre d'utilisateurs: <h5 class ="section content" id="adminFirstName">{{this.numberUsers}}</h5>
+      </div>
+      <div class = "section" >
+        Nombre de tickets: <h5 class ="section content" id="adminFirstName">{{this.numberTickets}}</h5>
+      </div>
+      <div class = "section" >
+        Tickets hautement prioritaires: <h5 class ="section content" id="adminFirstName">{{this.numberHighTickets}}</h5>
+      </div>
+      <div class = "section" >
+        Tickets moyennement prioritaires: <h5 class ="section content" id="adminFirstName">{{this.numberMediumTickets}}</h5>
+      </div>
+      <div class = "section" >
+        Tickets non prioritaires: <h5 class ="section content" id="adminFirstName">{{this.numberNormalTickets}}</h5>
+      </div>
+    </div>
+
+    <!--Graphics-->
+    <div class = "column">
+        <app-stats-graphs></app-stats-graphs>
+    </div>
+  </div>
+
+</mat-card>

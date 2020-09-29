@@ -1,0 +1,69 @@
+<mat-toolbar class="content-toolbar" color="primary">
+  <h2>Ticket</h2>
+  <span class="fill-space"></span>
+</mat-toolbar>
+
+<mat-card class=ticketDetails>
+  <h1 class = "title" id = "ticketTitle" style="color: blue">
+    {{ticketTitle}}
+  </h1>
+  <div class = "row">
+    <div class = "column">
+      <div class="details">
+        <div class = "section" >
+          Entreprise: <h5 class ="section content" id="companyName" style="color: blue">{{companyName}}</h5>
+        </div>
+        <div class = "section">
+          Type: <h5 class ="section content" id="type" style="color: blue">{{type}}</h5>
+        </div>
+        <div class = "section">
+          Pritorité: <h5 class ="section content" id="priority" style="color: blue">{{priority}}</h5>
+        </div>
+        <div class = "section">
+          Statut: <h5 class ="section content" id="status" style="color: blue">{{status}}</h5>
+        </div>
+        <div class = "section">
+          Description: <h5 class ="section content" id="description" style="color: blue">{{description}}</h5>
+        </div>
+    
+        <div class="section fileSection">
+            Fichiers liés: <ul class ="content" id="linkedFiles" style="list-style-type:none;">
+              <li class="linkedFile" style="color: blue">
+                file1.txt
+              </li>
+              <li class="linkedFile" style="color: blue">
+                file2.txt
+              </li>
+              <li class="linkedFile" style="color: blue">
+                file3.txt
+              </li>
+            </ul>
+            <div id="fileDragDrop">
+              <button class=dragDropBtn>
+                Déposer les fichiers
+              </button>
+            </div>
+        </div>
+        <div class = "section activitiesSection" style="margin-top: 20px;">
+          Activities:
+          <mat-tab-group id="activitiesTab">
+            <mat-tab label="Statut" style="color: blue">
+              Tab with table
+            </mat-tab>
+            <mat-tab label="Modification" style="color: blue">
+              Tab with table
+            </mat-tab>
+            <mat-tab label="Commentaires" style="color: blue">
+              Tab with table
+            </mat-tab>
+          </mat-tab-group>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class = "details">
+        <app-ticket-person-details></app-ticket-person-details>
+      </div>
+    </div>
+  </div>
+</mat-card>

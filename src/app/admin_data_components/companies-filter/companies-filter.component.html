@@ -1,0 +1,29 @@
+<mat-accordion>
+<mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Filtre
+      </mat-panel-title>
+      <mat-panel-description>
+	  Cliquez pour filtrer
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+	
+  <mat-form-field>
+      <input (input)="filteredCompany=$event.target.value" matInput placeholder="Entreprise">
+  </mat-form-field>
+  <mat-form-field>
+      <input (input)="filteredCity=$event.target.value" matInput placeholder="Ville">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Nombre d'utilisateurs</mat-label>
+    <mat-select (selectionChange)="changeNumbEmp($event.value)">
+    <mat-option *ngFor="let number of numbers" [value]="number.value">
+      {{number.viewValue}}
+    </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-button (click)="submitNewRequest()" style="float: right;">Filtrer</button>
+   </mat-expansion-panel>
+</mat-accordion>

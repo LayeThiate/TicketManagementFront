@@ -1,0 +1,29 @@
+<mat-card class="custom-mat-card">
+
+  <div class = "row">
+    <!--Written stats-->
+    <div class = "column">
+      <div class = "section" >
+        Effectif techniciens seuls: <h5 class ="section content" id="adminFirstName">{{this.numberTechnicians}}</h5>
+      </div>
+      <div class = "section" >
+        Effectif responsables: <h5 class ="section content" id="adminFirstName">{{this.numberResponsables}}</h5>
+      </div>
+      <div class = "section" >
+        Compétences différentes: <h5 class ="section content" id="adminFirstName">{{this.numberSkills}}</h5>
+      </div>
+      <div class = "section" >
+        Nombre d'interventions effectuées: <h5 class ="section content" id="adminFirstName">{{this.numberInterventions}}</h5>
+      </div>
+      <div class = "section" >
+        Moyenne de techniciens par responsable: <h5 class ="section content" id="adminFirstName">{{this.avgTechPerResp}}</h5>
+      </div>
+    </div>
+
+    <!--Graphics-->
+    <div class = "column">
+        <app-stats-graphs></app-stats-graphs>
+    </div>
+  </div>
+
+</mat-card>

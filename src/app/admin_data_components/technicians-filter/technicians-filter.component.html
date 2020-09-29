@@ -1,0 +1,42 @@
+<mat-accordion>
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Filtre
+      </mat-panel-title>
+      <mat-panel-description>
+	  Cliquez pour filtrer
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+  <mat-form-field>
+      <input (input)="filteredName=$event.target.value" matInput placeholder="Nom">
+  </mat-form-field>
+  <mat-form-field>
+      <input (input)="filteredLogin=$event.target.value" matInput placeholder="Login">
+  </mat-form-field>
+  <mat-form-field>
+      <input (input)="filteredEmail=$event.target.value" matInput placeholder="Email">
+  </mat-form-field>
+  <mat-form-field>
+      <input (input)="filteredSkills=$event.target.value" matInput placeholder="Compétences">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Fonction</mat-label>
+    <mat-select (selectionChange)="changeFunction($event.value)">
+    <mat-option *ngFor="let function of functions" [value]="function.value">
+      {{function.viewValue}}
+    </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+  <mat-label>Date d'embauche</mat-label>
+    <input matInput [matDatepicker]="picker" (dateInput)="changeFilteredDate($event)">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <button mat-button (click)="submitNewRequest()" style="float: right;">Filtrer</button>
+  
+   </mat-expansion-panel>
+</mat-accordion>

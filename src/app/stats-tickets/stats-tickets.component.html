@@ -1,0 +1,32 @@
+<mat-card class="custom-mat-card">
+
+  <div class = "row">
+    <!--Written stats-->
+    <div class = "column">
+      <div class = "section" >
+        Nombre total de tickets: <h5 class ="section content" id="adminFirstName">{{this.numberTickets}}</h5>
+      </div>
+      <div class = "section" >
+        Tickets encore ouverts: <h5 class ="section content" id="adminFirstName">{{this.numberOpenTickets}}</h5>
+      </div>
+      <div class = "section" >
+        Demandes: <h5 class ="section content" id="adminFirstName">{{this.numberDemandes}}</h5>
+      </div>
+      <div class = "section" >
+        Incidents: <h5 class ="section content" id="adminFirstName">{{this.numberIncidents}}</h5>
+      </div>
+      <div class = "section" >
+        Compétences différentes demandées: <h5 class ="section content" id="adminFirstName">{{this.numberOfSkillsAsked}}</h5>
+      </div>
+      <div class = "section" >
+        Moyenne de demande d'une compétence: <h5 class ="section content" id="adminFirstName">{{this.avgDemForSkill}}</h5>
+      </div>
+    </div>
+
+    <!--Graphics-->
+    <div class = "column">
+        <app-stats-graphs></app-stats-graphs>
+    </div>
+  </div>
+
+</mat-card>

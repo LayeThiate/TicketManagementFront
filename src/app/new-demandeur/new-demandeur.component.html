@@ -1,0 +1,67 @@
+<mat-toolbar class="content-toolbar" color="primary">
+	<h3 *ngIf="!this.modification">
+	  Nouveau Demandeur (INCOMPLETE BACKEND CALLS)
+	</h3>
+	<h3 *ngIf="this.modification">
+		Modifier Demandeur (INCOMPLETE BACKEND CALLS)
+	</h3>
+</mat-toolbar>
+
+<mat-card class="custom-mat-card">
+	<div class = inside-content>
+	  <mat-accordion [multi]="true">
+		
+		<div class=form-component>
+		  <mat-form-field>
+			<input (input)="firstName=$event.target.value" id="first-name-input" matInput placeholder="Nom">
+		  </mat-form-field>
+		</div>
+		<div class=form-component>
+		  <mat-form-field>
+			<input (input)="lastName=$event.target.value" id="last-name-input" matInput placeholder="Prénom">
+		  </mat-form-field>
+		</div>
+		<div class=form-component>
+		  <mat-form-field>
+			<input (input)="email=$event.target.value" id="email-input" matInput placeholder="Email">
+		  </mat-form-field>
+		</div>
+		<div class=form-component>
+		  <mat-form-field>
+			<input (input)="company=$event.target.value" id="company-name-input" matInput placeholder="Entreprise">
+		  </mat-form-field>
+		</div>
+
+		<mat-expansion-panel [expanded] = "true">
+		  <mat-expansion-panel-header>
+			<mat-panel-title>
+			  Identifiants
+			</mat-panel-title>
+		  </mat-expansion-panel-header>
+		  <div class=form-component>
+			<mat-form-field>
+			  <input (input)="userName=$event.target.value" type="text" matInput id="user-name-input" placeholder="Indentifiant" value={{getLogin()}}>
+			</mat-form-field>
+		  </div>
+		  <div class=form-component>
+			<mat-form-field>
+			  <input (input)="password=$event.target.value" type="text" id="pswd-input" matInput placeholder="Mot de passe" value={{getPswd()}}>
+			</mat-form-field>
+		  </div>
+		  <button mat-button (click)="generateLogins()" class=blue-button>
+			Générer
+		  </button>
+
+		</mat-expansion-panel>
+	  </mat-accordion>
+
+	  <div class="flex-box-2">
+		<button mat-button (click)="cancel()" class=white-button>
+		  Annuler
+		</button>
+		<button mat-button (click)="router.navigate(['/new-demandeur', this.company]);" class=blue-button>
+		  Créer
+		</button>
+	  </div>
+	</div>
+</mat-card>

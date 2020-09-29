@@ -1,0 +1,67 @@
+/* Styles for the card */
+mat-card{
+    margin-top: 10px;
+	padding: 9px;/*default is 16px*/ 
+}
+
+/* Styles for the toolbar */
+.mat-toolbar.mat-primary.content-toolbar {
+  background-color: #ff7024;
+  color: white;
+  font-size: 20px;
+  font-family:  Roboto, "Helvetica Neue", sans-serif;
+}
+
+.details{
+    display: inline-block;
+}
+
+.section{
+    margin-top: 10 px;
+    margin-bottom: 10 px;
+}
+
+.content{
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 20px;
+    display:inline-block;
+}
+
+#linkedFiles{
+    display: block;
+    margin: 0px;
+    margin-bottom: 5px;
+    padding: 0px;
+}
+
+.linkedFile{
+    margin-bottom: 5px;
+}
+
+#fileDragDrop{
+    display: flex;
+    border: 1px solid grey;
+    margin-top: 10px;
+    width: 36vw;
+    height: 15vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.dragDropBtn{
+    border:none;
+    background-color: inherit;
+}
+
+:host ::ng-deep .mat-tab-labels{
+    flex-direction: row;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+}

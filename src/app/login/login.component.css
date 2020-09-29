@@ -1,0 +1,35 @@
+mat-card {
+  max-width: 400px;
+  margin: 2em auto;
+  text-align: center;
+  border-color: #3b73b9;
+  border-width: 3px;
+  border-style: solid;
+}
+.signin-content {
+  padding: 60px 1rem;
+}
+.full-width-input {
+  width: 100%;
+}
+
+/* Styles for the buttons */
+.loginBtn {
+	background-color: #3b73b9;
+	color: white;
+	font-size: 12px;
+	box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+	margin-top: 18px;
+}
+
+.mat-toolbar.mat-primary.root-toolbar {
+  background:#3b73b9;
+  color: white;
+  font-size: 20px;
+  font-family:  Roboto, "Helvetica Neue", sans-serif;
+}
+
+.toolbarTitle{
+  flex: 1 1 auto;
+  text-align: center;
+}

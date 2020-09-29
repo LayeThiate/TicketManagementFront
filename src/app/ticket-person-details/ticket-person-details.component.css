@@ -1,0 +1,25 @@
+.section{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 0px;
+}
+
+.content{
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+#assignBtn{
+    margin-bottom: 20px;
+    margin-left: 15px;
+    border: none;
+    color: blue;
+    background-color: inherit;
+    text-decoration: underline;
+}
+
+.details{
+    display: table-cell;
+}

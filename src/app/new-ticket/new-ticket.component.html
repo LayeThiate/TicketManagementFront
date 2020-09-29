@@ -1,0 +1,106 @@
+<mat-toolbar class="content-toolbar" color="primary">
+<h2>
+Nouveau Ticket (INCOMPLETE WAITING FOR THE REST OF THE FIELDS BACKEND CALLS)
+</h2>
+</mat-toolbar>
+
+<mat-card class="custom-mat-card">
+	<div class = inside-content>
+	  <mat-accordion [multi]="true">
+		
+		<mat-expansion-panel [expanded] = "true">
+		  <mat-expansion-panel-header>
+			<mat-panel-title>
+			  Client
+			</mat-panel-title>
+		  </mat-expansion-panel-header>
+
+		  <div class=form-component>
+			<mat-form-field>
+			  <input (input)="companyName=$event.target.value" matInput placeholder="Nom du client">
+			</mat-form-field>
+		  </div>
+
+		  <div class=form-component>
+			<mat-form-field>
+			  <input (input)="companyId=$event.target.value" matInput placeholder="Id">
+			</mat-form-field>
+		  </div>
+
+		  <div class=form-component>
+			<mat-form-field>
+			  <input (input)="companyAddress=$event.target.value" matInput placeholder="Adresse">
+			</mat-form-field>
+		  </div>
+		</mat-expansion-panel>
+
+		<mat-expansion-panel [expanded] = "true">
+		  <mat-expansion-panel-header>
+			<mat-panel-title>
+			  Détails du ticket
+			</mat-panel-title>
+		  </mat-expansion-panel-header>
+
+		  <div class=form-component>
+			<mat-form-field>
+			  <input (input)="ticketTitle=$event.target.value" matInput placeholder="Titre">
+			</mat-form-field>
+		  </div>
+		  <div class=form-component>
+			<mat-form-field>
+			  <input (input)="userName=$event.target.value" matInput placeholder="Demandeur">
+			</mat-form-field>
+		  </div>
+		  <div class=form-component>
+			<mat-form-field>
+			  <input (input)="technicianName=$event.target.value" matInput placeholder="Technicien">
+			</mat-form-field>
+		  </div>
+		  <div class=form-component>
+			<mat-form-field>
+			  <input (input)="skill=$event.target.value" matInput placeholder="Expertise">
+			</mat-form-field>
+		  </div>
+		  <div class=form-component>
+			<mat-form-field>
+			  <input (input)="ticketCategory=$event.target.value" matInput placeholder="Catégorie">
+			</mat-form-field>
+		  </div>
+		  <div class=form-component>
+			<mat-form-field>
+			  <mat-label>Type</mat-label>
+			  <mat-select (selectionChange)="changeType($event.value)">
+				<mat-option *ngFor="let type of types" [value]="type.value">
+				  {{type.viewValue}}
+				</mat-option>
+			  </mat-select>
+			</mat-form-field>
+		  </div>
+		  <div class=form-component>
+			<mat-form-field>
+			  <mat-label>Priority</mat-label>
+			  <mat-select (selectionChange)="changePrio($event.value)">
+				<mat-option *ngFor="let prio of priorities" [value]="prio.value">
+				  {{prio.viewValue}}
+				</mat-option>
+			  </mat-select>
+			</mat-form-field>
+		  </div>
+		  <div class=form-component style = "width:79vw; height: 35vh">
+			<mat-form-field style="height:100%">
+			  <input (input)="ticketDescription=$event.target.value" matInput placeholder="Description">
+			</mat-form-field>
+		  </div>
+		</mat-expansion-panel>
+	  </mat-accordion>
+
+	  <div class="flex-box-2">
+		<button mat-button (click)="cancel()" class=cancel-button>
+		  Annuler
+		</button>
+		<button mat-button (click)="createTicket()" class=create-button>
+		  Créer
+		</button>
+	 </div>
+	</div>
+</mat-card>

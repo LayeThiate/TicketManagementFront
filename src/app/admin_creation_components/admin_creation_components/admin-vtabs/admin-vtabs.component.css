@@ -1,0 +1,15 @@
+::ng-deep .mat-tab-labels{
+    flex-direction: column;
+}
+
+.mat-tab-group{
+    flex-direction: row;
+}
+
+#ticketsTab{
+    display: table;
+}
+
+.tabElement{
+    display: table-cell;
+}

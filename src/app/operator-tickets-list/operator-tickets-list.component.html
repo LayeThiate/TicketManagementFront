@@ -1,0 +1,76 @@
+<mat-toolbar class="content-toolbar" color="primary">
+  <h2>Tickets</h2>
+  <span class="fill-space"></span>
+  <button class="createTicketBtn" mat-button routerLink="/new-ticket"><mat-icon>add</mat-icon>Créer un ticket
+  </button>
+  </mat-toolbar>
+  <mat-card class="custom-mat-card">
+    <app-tickets-filter></app-tickets-filter>
+    <div>
+      <table mat-table [dataSource]="dataSource">
+  
+        <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+        <!-- Position Column -->
+          
+        <!-- Id Column -->
+        <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+  
+        <!-- Client Column -->
+        <ng-container matColumnDef="client">
+        <th mat-header-cell *matHeaderCellDef> Client </th>
+        <td mat-cell *matCellDef="let element"> {{element.client}} </td>
+        </ng-container>
+  
+        <!-- Utilisateur Column -->
+        <ng-container matColumnDef="utilisateur">
+        <th mat-header-cell *matHeaderCellDef> Demandeur </th>
+        <td mat-cell *matCellDef="let element"> {{element.utilisateur}} </td>
+        </ng-container>
+  
+        <!-- Titre Column -->
+        <ng-container matColumnDef="titre">
+        <th mat-header-cell *matHeaderCellDef> Titre </th>
+        <td mat-cell *matCellDef="let element"> {{element.titre}} </td>
+        </ng-container>
+        
+        <!-- Type Column -->
+        <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef> Type </th>
+        <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+        </ng-container>
+        
+        <!-- Catégorie Column -->
+        <ng-container matColumnDef="categorie">
+        <th mat-header-cell *matHeaderCellDef> Catégorie </th>
+        <td mat-cell *matCellDef="let element"> {{element.categorie}} </td>
+        </ng-container>
+       
+       <!-- dateCreation Column -->
+        <ng-container matColumnDef="dateCreation">
+        <th mat-header-cell *matHeaderCellDef> Date de création </th>
+        <td mat-cell *matCellDef="let element"> {{element.dateCreation}} </td>
+        </ng-container>
+        
+        <!-- Technicien Column -->
+        <ng-container matColumnDef="technicien">
+        <th mat-header-cell *matHeaderCellDef> Technicien </th>
+        <td mat-cell *matCellDef="let element"> {{element.technicien}} </td>
+        </ng-container>
+        
+        <!-- Statut Column -->
+        <ng-container matColumnDef="statut">
+        <th mat-header-cell *matHeaderCellDef> Statut </th>
+        <td mat-cell *matCellDef="let element"> {{element.statut}} </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="router.navigate(['/ticket-details']);"></tr>
+      </table>
+    </div>
+  </mat-card>
+  <p></p>

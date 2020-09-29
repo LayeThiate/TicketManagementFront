@@ -1,0 +1,88 @@
+<mat-toolbar class="content-toolbar" color="primary">
+	<h3 *ngIf="!this.modification">
+		Nouvelle Entreprise (INCOMPLETE BACKEND CALLS SCRIPT)
+	</h3>
+	<h3 *ngIf="this.modification">
+		Modifier Entreprise (INCOMPLETE BACKEND CALLS SCRIPT)
+	</h3>
+</mat-toolbar>
+
+<mat-card class="custom-mat-card">
+	<div class=inside-content>
+	  <mat-accordion [multi]="true">
+		<div class=form-component>
+		  <mat-form-field>
+			<input (input)="companyName=$event.target.value" id="company-name-input" matInput placeholder="Nom de l'entreprise">
+		  </mat-form-field>
+		</div>
+		<div class=form-component>
+		  <mat-form-field>
+			<input (input)="city=$event.target.value" id="city-input" matInput placeholder="Ville">
+		  </mat-form-field>
+		</div>
+		<div class=form-component>
+		  <mat-form-field>
+			<input (input)="PDG=$event.target.value" id="pdg-input" matInput placeholder="PDG">
+		  </mat-form-field>
+		</div>
+		<div class=form-component>
+		  <mat-form-field>
+			<input (input)="emailPDG=$event.target.value" id="email-pdg-input" matInput placeholder="Email PDG">
+		  </mat-form-field>
+		</div>
+		<div class=form-component>
+		  <mat-form-field>
+			<mat-label>Priorité par défaut</mat-label>
+			<mat-select (selectionChange)="changePrio($event.value)" id="prio-select">
+			  <mat-option *ngFor="let prio of priorities" [(value)]="prio.value">
+				{{prio.viewValue}}
+			  </mat-option>
+			</mat-select>
+		  </mat-form-field>
+		</div>
+		<div class=form-component>
+		  <mat-form-field>
+			<input (input)="id=$event.target.value" id="id-input" matInput placeholder="ID">
+		  </mat-form-field>
+		</div>
+		<div class=form-component style = "width:79vw">
+		  <mat-form-field>
+			<input (input)="adress=$event.target.value" id="adress-input" matInput placeholder="Adresse">
+		  </mat-form-field>
+		</div>
+
+		<mat-expansion-panel [expanded] = "true">
+		  <mat-expansion-panel-header>
+			<mat-panel-title>
+			  Demandeurs
+			</mat-panel-title>
+		  </mat-expansion-panel-header>
+		  	<table mat-table>
+				<ng-container matColumnDef="nom">
+					<th mat-header-cell *matHeaderCellDef> Nom du demandeur </th>
+					<td mat-cell *matCellDef="let element; let i = index">
+						<mat-form-field>
+							<input matInput [(ngModel)]="myDates[i]" placeholder="Nom">
+						</mat-form-field>
+					</td>
+				</ng-container>
+
+				<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+				<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+			</table>
+			<button mat-button (click)="router.navigate(['/new-demandeur', this.companyName]);" class=blue-button>
+				Ajouter un demandeur
+			</button>
+		</mat-expansion-panel>
+	  </mat-accordion>
+
+	  <div class="flex-box-2">
+		<button mat-button (click)="cancel()" class=white-button>
+		  Annuler
+		</button>
+		<button mat-button (click)="createCompany()" class=blue-button>
+		  Créer
+		</button>
+	  </div>
+	</div>
+</mat-card>

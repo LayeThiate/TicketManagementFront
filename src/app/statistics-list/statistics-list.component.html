@@ -1,0 +1,46 @@
+<mat-toolbar class="content-toolbar" color="primary">
+  <h2>Statistiques</h2>
+  <span class="fill-space"></span>
+</mat-toolbar>
+
+<mat-card class="custom-mat-card">
+  <!--Stats for tickets-->
+  <div class = "row">
+    <div class = "column">
+      <div class ="row">
+        <h4> Tickets </h4>
+        <mat-checkbox style="float:right" id="is-resp-checkbox" [(ngModel)]="mineOnly" *ngIf="this.isResponsable">
+          Mes statistiques
+        </mat-checkbox>
+      </div>
+      <div class = "section" >
+        Nombre total de tickets: <h5 class ="section content" id="adminFirstName" *ngIf="!this.mineOnly">{{this.numberTickets}}</h5> <h5 class ="section content" id="adminFirstName" *ngIf="this.mineOnly">{{this.myNumberTickets}}</h5>
+      </div>
+      <div class = "section" >
+        Nombre de tickets clos: <h5 class ="section content" id="adminFirstName" *ngIf="!this.mineOnly">{{this.numberTicketsClosed}}</h5> <h5 class ="section content" id="adminFirstName" *ngIf="this.mineOnly">{{this.myNumberTicketsClosed}}</h5>
+      </div>
+      <div class = "sub-section" >
+        Nombre de tickets clos à temp: <h5 class ="content" id="adminFirstName" *ngIf="!this.mineOnly">{{this.numberTicketsClosedOnTime}}</h5> <h5 class ="content" id="adminFirstName" *ngIf="this.mineOnly">{{this.myNumberTicketsClosedOnTime}}</h5>
+      </div>
+      <div class = "sub-section" >
+        Nombre de tickets clos en retard: <h5 class ="content" id="adminFirstName" *ngIf="!this.mineOnly">{{this.numberTicketsNotClosedOnTime}}</h5> <h5 class ="content" id="adminFirstName" *ngIf="this.mineOnly">{{this.myNumberTicketsNotClosedOnTime}}</h5>
+      </div>
+      <div class = "section" >
+        Nombre de tickets non-clos: <h5 class ="section content" id="adminFirstName" *ngIf="!this.mineOnly">{{this.numberTicketsNotClosed}}</h5> <h5 class ="section content" id="adminFirstName" *ngIf="this.mineOnly">{{this.myNumberTicketsNotClosed}}</h5>
+      </div>
+    </div>
+
+    <!--Stats for technicians-->
+    <div class = "column" *ngIf="this.isResponsable">
+      <h4> Techniciens </h4>
+      <div class = "section" >
+        Nombre total de techniciens: <h5 class ="section content" id="adminFirstName">{{this.numberTickets}}</h5>
+      </div>
+      <div class = "section" >
+        Nombre de tickets par technicien: <h5 class ="section content" id="adminFirstName">{{this.numberTicketsPerTech}}</h5>
+      </div>
+    </div>
+  </div>
+
+</mat-card>
+

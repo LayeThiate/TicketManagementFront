@@ -1,0 +1,15 @@
+/* Styles for the side navigation bar */
+mat-sidenav {
+    width: 250px;
+}
+ 
+main {
+    padding: 10px;
+}
+
+/* It is not workiiiiing yet */
+/*
+.custom-nav.mat-drawer-side {
+    border-right: none;
+}
+*/

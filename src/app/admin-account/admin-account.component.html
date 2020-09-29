@@ -1,0 +1,54 @@
+<mat-toolbar class="content-toolbar" color="primary">
+  <h2>Compte</h2>
+  <span class="fill-space"></span>
+</mat-toolbar>
+
+<mat-card class="custom-mat-card">
+  <div class="personal details">
+    <div class = "section" >
+      Prénom: <h5 class ="section content" id="adminFirstName">{{person.firstName}}</h5>
+    </div>
+    <div class = "section" >
+      Nom: <h5 class ="section content" id="adminLastName">{{person.lastName}}</h5>
+    </div>
+    <div class = "section" >
+      Email: <h5 class ="section content" id="adminEmail">{{person.email}}</h5>
+    </div>
+    <div class = "section" >
+      Date de naissance: <h5 class ="section content" id="adminDoB">{{person.dob}}</h5>
+    </div>
+    <div class = "section" >
+      Téléphone: <h5 class ="section content" id="adminTel">{{person.telephone}}</h5>
+    </div>
+    <div class = "section" >
+      Portable: <h5 class ="section content" id="adminMobile">{{person.mobile}}</h5>
+    </div>
+    <div class = "section" >
+      Adresse: <h5 class ="section content" id="adminAdress">{{person.adress}}</h5>
+    </div>
+  </div>
+  <div class="employment details">
+    <div class = "section" >
+      Date d'embauche: <h5 class ="section content" id="adminHiringDate">{{person.hiringDate}}</h5>
+    </div>
+    <div class = "section" >
+      ID du contrat: <h5 class ="section content" id="adminContractID">{{person.contractID}}</h5>
+    </div>
+    <div class = "section" >
+      Fonction: <h5 class ="section content" id="adminFunction">{{person.function}}</h5>
+    </div>
+  </div>
+  <div class="login details">
+    <div class='data'>
+      <div class = "section" >
+        Login: <h5 class ="section content" id="companyName">{{person.login}}</h5>
+      </div>
+      <div *ngIf="true" class = "section" >
+        Mot de passe: <h5 class ="section content" id="companyName">{{person.mdp}}</h5>
+      </div>
+    </div>
+    <div>
+      <button class="editLoginBtn" mat-button routerLink="/new-company"><mat-icon>edit</mat-icon>Modifier</button>
+    </div>
+  </div>
+</mat-card>
